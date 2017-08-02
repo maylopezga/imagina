@@ -1,0 +1,38 @@
+<header>
+
+
+
+  <nav class="be-black white large-padding">
+  <!--nav class="be-red white large-padding"-->
+
+    <div class="containe r-fluid">
+      <div class="navbar-header">
+        <h1 class="font" id="logo"> IMAGINA </h1>
+      </div>
+
+      <div class="container-fluid">
+
+
+      <ul class="font nav navbar-nav navbar-right middle-xs">
+        <% if user_signed_in?%>
+          
+          <li><%= link_to  destroy_user_session_path, method: :delete do %>
+            <span class="glyphicon glyphicon-log-in "></span> Cerrar sesión<%end%>
+          </li>
+
+        <%else%>
+        <li><%= link_to  new_user_registration_path do %>
+          <span class="glyphicon glyphicon-user"></span> Registrarse<%end%>
+        </li>
+        <li><%= link_to  new_user_session_path do %>
+          <span class="glyphicon glyphicon-log-in"></span> Iniciar sesión<%end%>
+        </li>
+
+        <%end%>
+      </ul>
+
+      </div>
+    </div>
+  </nav>
+
+</header>
